@@ -12,6 +12,8 @@ import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
@@ -26,6 +28,17 @@ public class TMemberJcData implements java.io.Serializable {
 	private String jcdata1;
 	private String jcdata2;
 	private Set<TBg> TBgs = new HashSet<TBg>(0);
+	private XxOrder xxOrder;
+	
+	@ManyToOne(fetch = FetchType.LAZY)
+	@JoinColumn(name = "order_id")
+	public XxOrder getXxOrder() {
+		return this.xxOrder;
+	}
+
+	public void setXxOrder(XxOrder xxOrder) {
+		this.xxOrder = xxOrder;
+	}
 	
 	@OneToMany(fetch = FetchType.LAZY, mappedBy = "TMemberJcData")
 	public Set<TBg> getTBgs() {
