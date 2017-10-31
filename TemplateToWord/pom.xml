@@ -12,9 +12,9 @@
 	<description>TemplateToWord for All service instance</description>
 
 	<parent>
-		<groupId>com.agen.parent</groupId>
+		<groupId>com.agen.cloud</groupId>
 		<artifactId>parent</artifactId>
-		<version>0.0.1-parent</version>
+		<version>0.0.1-cloud_parent</version>
 		<relativePath /> <!-- lookup parent from repository -->
 	</parent>
 
@@ -23,6 +23,10 @@
 	</properties>
 
 	<dependencies>
+		<dependency>
+			<groupId>org.springframework.cloud</groupId>
+			<artifactId>spring-cloud-starter-eureka</artifactId>
+		</dependency>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-data-jpa</artifactId>
